@@ -1,0 +1,407 @@
+*{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html, #hotbar{
+  background-color: #100303;
+  color: #F7F7F7;
+  font-family: 'Poppins'; 
+  width: 100%;
+}
+html, #sometext{
+  display: inline;
+  font-size: 1.25em;
+  margin-block-start: 0;
+  margin-block-end: 10;
+  margin-inline-start:0;
+  margin-inline-end: 170px;
+  font-weight: bold;
+}
+
+body{
+  font-family: 'Poppins';
+  background-color: #180f14;
+  color: whitesmoke;
+  line-height: 1.6;
+  background: linear-gradient(-45deg, #BAB7B8, #676466, #BAB7B8, #676466);
+	background-size: 500% 500%;
+	animation: gradient 60s ease infinite;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Gradient Background */
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* Navigation Bar */
+nav{
+  background: #242526;
+  height: 80px;
+  width: 100%;
+}
+
+label.logo{
+  float: left;
+  color: #FFFFFF;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+a.active,a:hover{
+  background: #EB0000;
+  transition: .5s;
+}
+
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check{
+  display: none;
+}
+
+/* Small Screen */
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+
+/* Smaller Screen */
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #242526;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #EB0000;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+
+#top{
+  margin-left: 50px;
+  opacity: 0;
+  animation-name: fadein;
+  animation-duration: 250ms;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+#title{
+  text-transform: uppercase;
+}
+
+#desc{
+  inline-size: 850px;
+  overflow-wrap: break-word;
+}
+
+.btn{
+  display: inline-block;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1rem 1rem;
+  opacity: 0;
+  animation-name: fadein;
+  animation-duration: 250ms;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+  border-radius: 10px;
+
+  background-color: black;
+
+  transition-property: transform;
+  transition-duration: 10s;
+}
+
+#lbtn{
+  margin-top: 40px;
+}
+
+.btn:hover{
+  background-color: black;
+  box-shadow: 0 0 1rem #EB0000;
+  transition-duration: .75s;
+}
+
+@keyframes fadein{
+  0%{opacity: 0;}
+  100%{opacity: 1; pointer-events: all;}
+}
+
+#himg{
+  float: right;
+  margin-top: -345px;
+  margin-right: 50px;
+}
+
+.cntn{
+  max-width: 960px;
+  margin: auto;
+  padding: 0 30px;
+}
+
+#showcase{
+  height: 300px;
+}
+
+#showcase h1{
+  font-size: 60px;
+  line-height: 1.3;
+  position: relative;
+  animation: heading;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+}
+
+
+#logo{
+  position: relative;
+  animation: heading;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+}
+
+#text1{
+  font-size: 25px;
+  position: relative;
+  animation-name: text1;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes text1{
+  0%{left: -1000px;}
+  100%{left: 0;}
+}
+
+#text2{
+  font-size: 25px;
+  position: relative;
+  animation-name: text2;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes text2{
+  0%{right: -1000px;}
+  100%{right: 0;}
+}
+
+
+
+.imageText{
+  display: inline-block;
+  background-color: #13141fad;
+  border-radius: 15px;
+  margin:40px;
+  
+  opacity: 0;
+
+  animation-name: btn;
+  animation-duration: 3500ms;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
+}
+
+.imageText:hover{
+  box-shadow: 0 0 .5rem ghostwhite;
+}
+
+.imageText img{
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.imageText a{
+  color: ghostwhite;
+  font-size: 25px;
+}
+
+@keyframes thingsAnimation{
+  0%{opacity: 0;}
+  100%{opacity: 1; }
+}
+
+#start{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("image.png");
+  background-size: fill;
+  animation: bgAnimation 3s ease infinite;
+}
+
+#mouseground{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("bg.jpeg");
+  background-size: fill;
+  animation: bgAnimation 3s ease infinite;
+}
+
+@keyframes bgbymouseAnimation{
+  0%{background-position:left center; }
+  50%{background-position:right center; }
+  100%{background-position:left center; }
+}
+
+#midde2{
+  background-image: linear-gradient( rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5) ), url("vectorpurple.png");
+  background-size: fill;
+  width: 100%;
+  height: 100%;
+  margin-block-start: 0;
+  margin-block-end: 10;
+  
+}
+
+#Features{
+  height: 100px;
+}
+
+
+
+#end{
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("bg4.jpeg");
+  background-size: fill;
+  animation: bgAnimation1 15s ease infinite;
+}
+
+@keyframes bgAnimation{
+  0%{background-position:left center; }
+  50%{background-position:right center; }
+  100%{background-position:left center; }
+}
+
+@keyframes bgAnimation1{
+  0%{background-position:left center; }
+  50%{background-position:right center; }
+  100%{background-position:left center; } 
+}
+
+.eBtn{
+  display: inline-block;
+  color: whitesmoke;
+  text-decoration: none;
+  padding:1rem;
+  border: #ffffff 1px solid;
+  margin: 20px;
+  opacity: 0;
+  animation-name: btn;
+  animation-duration: 2500ms;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+
+  background-color: black;
+
+  transition-property: transfrom;
+  transition-duration: 1s;
+}
+
+.eBtn:hover{
+  box-shadow: 0 0 .5rem ghostwhite;
+}
+
+a img{
+  width: 70px;
+  height: 70px;
+  margin: 0px;
+}
+
+#backToTop{
+  position: sticky;
+  float: right;
+  background-color: grey;
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  color: white;
+  bottom: 15px;
+  right: 15px;
+  font-size: 15px;
+  border-radius: 25px;
+  border: 1px solid black;
+  text-decoration: none;
+}
+
+#backToTop:hover{
+  box-shadow: 0 0 .5rem ghostwhite;
+}
+
+#showAll{
+  font-family: 'Poppins';
+  font-size: 40px;
+  background-color: gray;
+  color: white;
+  padding: 25px;
+}
+

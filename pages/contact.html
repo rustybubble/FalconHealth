@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="../css/tracker.css">
+
+	<title>Contact Us</title>
+	<link rel="icon" href="../assets/images/fh/logo_falcon_health.ico">
+
+</head>
+
+<body>
+  <!--Navigation Bar-->
+  <div id="navbar">
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">FalconHealth</label>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="food.html">Healthy Food</a></li>
+        <li><a href="tracker.html">Exercise Tracker</a></li>
+        <li><a href="detector.html">Disease Detector</a></li>
+				<li><a href="about.html">Our Team</a></li>
+				<li><a class="active" href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container">
+    <form onsubmit="sendEmail(); reset(); return false;">
+      <h1>Get In Touch</h1>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="text" id="email" placeholder="Email" required>
+      <input type="text" id="phnum" placeholder="Phone Number (Not Required)">
+      <textarea id="message" rows="4" placeholder="Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function sendEmail(){
+      Email.send({
+        secureToken: "c5b8552e-9a4b-4ebe-a26d-4ee0094f290a",
+        To : "FlyingTime.ContactUs@gmail.com",
+        From : document.getElementById("email").value,
+        Subject : "Contact Us Form Submission - FlyingTime",
+        Body : "Name: " + document.getElementById("name").value +
+              "<br>Email: " + document.getElementById("email").value + 
+              "<br>Phone Number: " + document.getElementById("phnum").value +
+              "<br>Message: " + document.getElementById("message").value()
+      }).then(message => alert("Message Sent Successfully!"));
+    }
+  </script>
+</body>
+</html>
